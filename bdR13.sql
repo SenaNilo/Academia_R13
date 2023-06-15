@@ -67,14 +67,15 @@ insert into tb_pagamento (sts_pagamento, id_maromba, id_data) values
 ('pago', 4, 4);*/
 
 
-/* Selects */    
-/* Paga */
+/* Selects de teste para colocar no codigo */    
+/* Clientes que pagaram */
 select ma.nm_maromba, dt.ult_pagamento as UltimoPag, dt.prx_pagamento as ProximoPag 
     from tb_marombas as ma 
 		inner join tb_datas as dt on (dt.id_data = ma.id_data) 
 			where dt.prx_pagamento > curdate();
 
-/* N Paga */
+
+/* Clientes que n pagaram */
 select ma.nm_maromba, dt.ult_pagamento as UltimoPag, dt.prx_pagamento as ProximoPag 
     from tb_marombas as ma 
 		inner join tb_datas as dt on (dt.id_data = ma.id_data) 
